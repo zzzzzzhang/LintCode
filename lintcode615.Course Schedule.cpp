@@ -44,8 +44,8 @@ public:
     }
 };
 int main(){
-	int n = 2;
-	vector<pair<int, int>> prerequisites = {{1,0}};
+	int n = 3;
+	vector<pair<int, int>> prerequisites = {{1,0},{2,0}};
 	Solution solove; 
 	bool x = solove.canFinish(n, prerequisites);
 	cout<<x<<endl;
