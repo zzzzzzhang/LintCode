@@ -38,7 +38,15 @@ public:
 int main()
 {
 	Solution solve;
-	out = new TreeNode(0);
+	TreeNode *out = new TreeNode(0);
 	TreeNode T0(0);
-	solve.flatten(&T0)
+	TreeNode T1(1);
+	TreeNode T2(2);
+	T0.left = &T1;
+	T0.right = &T2;
+	solve.flatten(&T0);
+	cout<<T0.right->val<<endl;
+	cout<<T0.left<<endl;
+	cout<<T0.right->right->val<<endl; 
+	return 0;
 }
