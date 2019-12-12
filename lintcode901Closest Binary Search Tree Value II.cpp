@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<cmath>
 using namespace std;
 
 class TreeNode {
@@ -38,8 +39,40 @@ public:
 			int mid = (start + end)/2;
 			(inorder[mid] < target)? start = mid : end = mid;
 		}
+		while(k>0)
+		{
+			if(start >= 0 && end < inorder.size())
+			 {
+			 	if(abs(inorder[start] - target) < abs(inorder[end] - target))
+			 	{
+			 		out.push_back(inorder[start]);
+			 		k--;
+					start--;
+				}
+				else
+				{
+					out.push_back(inorder[end]);
+					k--;
+					end++;
+				}
+			 }
+			else if(start < 0)
+			{
+				out.push_back(inorder[end]);
+				k--;
+				end++;
+			}
+			else if(end >= inorder.size())
+			{
+				out.push_back(inorder[start]);
+			 	k--;
+				start--;
+			}
+			else
+			return {};
+		} 
 		        
-        return inorder;
+        return out;
     }
 };
 int main()
