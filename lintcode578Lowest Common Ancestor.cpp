@@ -45,7 +45,7 @@ public:
 		
 		if(total == 2) res = root;
 		
-		return 2;
+		return total;
 	}
 };
 
