@@ -26,6 +26,9 @@ public:
     	path.push_back(str);
     	help(result, path, s, k+2);
     	path.pop_back();
+    	for(auto p:path) cout<<p;
+    	cout<<endl;
+    	return;
 	}
     vector<vector<string>> splitString(string& s) {
         // write your code here
@@ -38,7 +41,7 @@ public:
 int main()
 {
 	Solution solove;
-	string s = "abcdef";
+	string s = "abcde";
 	vector<vector<string>> out;
 	out = solove.splitString(s);
 	for(auto i: out)
