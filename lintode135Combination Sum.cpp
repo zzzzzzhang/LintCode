@@ -23,6 +23,11 @@ public:
 			if(i>start && candidates[i] == candidates[i-1]) continue;
 			tem.push_back(candidates[i]);
 			int _target = target - candidates[i];
+			if(_target<0) 
+			{
+				tem.pop_back();
+				return;
+			}
 			dfs(res, tem, candidates, _target, i);
 			tem.pop_back();
 		}
